@@ -10,8 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.atahanylmz.howlong.dummy.DummyContent;
-import com.example.atahanylmz.howlong.dummy.DummyContent.DummyItem;
 
 /**
  * A fragment representing a list of Items.
@@ -67,7 +65,7 @@ public class ClockFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyClockRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyClockRecyclerViewAdapter(DefaultClocks.clockList, mListener));
         }
         return view;
     }
@@ -102,6 +100,6 @@ public class ClockFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(ClockItem item);
     }
 }

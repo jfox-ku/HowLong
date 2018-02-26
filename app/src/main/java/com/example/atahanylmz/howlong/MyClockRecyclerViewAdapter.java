@@ -7,21 +7,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.atahanylmz.howlong.ClockFragment.OnListFragmentInteractionListener;
-import com.example.atahanylmz.howlong.dummy.DummyContent.DummyItem;
 
-import java.util.List;
+import java.util.ArrayList;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final ArrayList<ClockItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyClockRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public MyClockRecyclerViewAdapter(ArrayList<ClockItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -36,8 +30,8 @@ public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecy
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mIdView.setText(mValues.get(position).getId());
+        holder.mContentView.setText(mValues.get(position).getName());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,13 +54,13 @@ public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecy
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public DummyItem mItem;
+        public ClockItem mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mIdView = (TextView) view.findViewById(R.id.name_field);
+            mContentView = (TextView) view.findViewById(R.id.remain_field);
         }
 
         @Override
