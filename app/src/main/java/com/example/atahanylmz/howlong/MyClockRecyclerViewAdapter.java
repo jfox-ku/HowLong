@@ -57,8 +57,8 @@ public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecy
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = view.findViewById(R.id.name_field);
-            mContentView = view.findViewById(R.id.remain_field);
+            mIdView = view.findViewById(R.id.name_area);
+            mContentView = view.findViewById(R.id.rem_area);
         }
 
         @Override

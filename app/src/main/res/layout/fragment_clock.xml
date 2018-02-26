@@ -7,13 +7,13 @@
 
 
     <TextView
-        android:id="@+id/name_field"
+        android:id="@+id/name_area"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Name" />
 
     <TextView
-        android:id="@+id/remain_field"
+        android:id="@+id/rem_area"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Remain" />
