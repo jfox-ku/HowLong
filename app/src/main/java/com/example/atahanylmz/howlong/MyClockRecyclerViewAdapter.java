@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.atahanylmz.howlong.ClockFragment.OnListFragmentInteractionListener;
@@ -30,8 +31,10 @@ public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecy
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(String.valueOf(mValues.get(position).getId()));
-        holder.mContentView.setText(mValues.get(position).getName());
+        holder.mIdView.setText(mValues.get(position).getName()); //String.valueOf(mValues.get(position).getId())
+        holder.mContentView.setText(mValues.get(position).getFormattedEndDate());
+        holder.mSubView.setText(String.valueOf(mValues.get(position).getIntervalInDays()) + " days left");
+        holder.mPercentView.setProgress(mValues.get(position).getPercentComp());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,13 +57,17 @@ public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecy
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
+        private final TextView mSubView;
+        private final ProgressBar mPercentView;
         public ClockItem mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.name_area);
-            mContentView = (TextView) view.findViewById(R.id.rem_area);
+            mIdView = view.findViewById(R.id.name_area);
+            mContentView = view.findViewById(R.id.rem_area);
+            mSubView = view.findViewById(R.id.day_area);
+            mPercentView = view.findViewById(R.id.determinateBar);
         }
 
         @Override

@@ -17,6 +17,6 @@ public class MainActivity extends BaseActivity implements ClockFragment.OnListFr
 
     @Override
     public void onListFragmentInteraction(ClockItem item) {
-        System.out.println("Something was clicked!");
+        System.out.println("Something was clicked! -> " + item.getId());
     }
 }

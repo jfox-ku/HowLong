@@ -12,10 +12,10 @@ class DefaultClocks {
 
     private DefaultClocks() {
         clockList = new ArrayList<ClockItem>();
-        clockList.add(new ClockItem(1, 1, 2019));
-        clockList.add(new ClockItem(1, 1, 2020));
-        clockList.add(new ClockItem(1, 1, 2021));
-        clockList.add(new ClockItem(1, 1, 2022));
+        clockList.add(new ClockItem("First Date", 26, 2, 2019));
+        clockList.add(new ClockItem("Second Date", 4, 4, 2020));
+        clockList.add(new ClockItem("Third Date", 8, 8, 2021));
+        clockList.add(new ClockItem("Fancy Date", 16, 12, 2022));
 
     }
 
