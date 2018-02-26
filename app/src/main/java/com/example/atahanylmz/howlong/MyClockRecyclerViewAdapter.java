@@ -30,15 +30,13 @@ public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecy
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getId());
+        holder.mIdView.setText(String.valueOf(mValues.get(position).getId()));
         holder.mContentView.setText(mValues.get(position).getName());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
                     mListener.onListFragmentInteraction(holder.mItem);
                 }
             }
@@ -59,8 +57,8 @@ public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecy
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.name_field);
-            mContentView = (TextView) view.findViewById(R.id.remain_field);
+            mIdView = view.findViewById(R.id.name_field);
+            mContentView = view.findViewById(R.id.remain_field);
         }
 
         @Override
