@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HowLong.iml" filepath="$PROJECT_DIR$/HowLong.iml" />
+      <module fileurl="file://C:\Users\atahanylmz\AndroidStudioProjects\HowLong2\HowLong.iml" filepath="C:\Users\atahanylmz\AndroidStudioProjects\HowLong2\HowLong.iml" />
       <module fileurl="file://$PROJECT_DIR$/HowLong2.iml" filepath="$PROJECT_DIR$/HowLong2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
