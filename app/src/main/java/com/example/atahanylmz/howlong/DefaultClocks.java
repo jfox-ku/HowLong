@@ -3,7 +3,9 @@ package com.example.atahanylmz.howlong;
 import java.util.ArrayList;
 
 class DefaultClocks {
+
     private static final DefaultClocks ourInstance = new DefaultClocks();
+
     public static ArrayList<ClockItem> clockList;
 
     static DefaultClocks getInstance() {
@@ -11,7 +13,7 @@ class DefaultClocks {
     }
 
     private DefaultClocks() {
-        clockList = new ArrayList<ClockItem>();
+        clockList = new ArrayList<>();
         clockList.add(new ClockItem(1, 1, 2019));
         clockList.add(new ClockItem(1, 1, 2020));
         clockList.add(new ClockItem(1, 1, 2021));

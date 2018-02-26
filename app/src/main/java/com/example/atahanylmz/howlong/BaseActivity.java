@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 
 public class BaseActivity extends AppCompatActivity {
 
-    public void updateFragment(Fragment fr, int layoutID) {
-        getSupportFragmentManager().beginTransaction().replace(layoutID, fr).commit();
+    public void updateFragment(Fragment fragment, int layoutID) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(layoutID, fragment)
+                .commit();
     }
 
 

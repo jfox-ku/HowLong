@@ -3,6 +3,7 @@ package com.example.atahanylmz.howlong;
 import java.util.Calendar;
 
 public class ClockItem {
+
     private String name;
     private int id;
     private static int counter = 0;
