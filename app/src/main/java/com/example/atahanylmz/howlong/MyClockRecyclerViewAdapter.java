@@ -7,16 +7,16 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.atahanylmz.howlong.ClockFragment.OnListFragmentInteractionListener;
+import com.example.atahanylmz.howlong.ClockFragment.OnClockListFragmentInteractionListener;
 
 import java.util.ArrayList;
 
 public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecyclerViewAdapter.ViewHolder> {
 
     private final ArrayList<ClockItem> mValues;
-    private final OnListFragmentInteractionListener mListener;
+    private final OnClockListFragmentInteractionListener mListener;
 
-    public MyClockRecyclerViewAdapter(ArrayList<ClockItem> items, OnListFragmentInteractionListener listener) {
+    public MyClockRecyclerViewAdapter(ArrayList<ClockItem> items, OnClockListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -24,18 +24,27 @@ public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecy
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_clock, parent, false);
+                .inflate(R.layout.clock_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+
+        //TODO Refactor these code, there are unused lines. You can do this better.
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).getName()); //String.valueOf(mValues.get(position).getId())
         holder.mContentView.setText(mValues.get(position).getFormattedEndDate());
         holder.mSubView.setText(String.valueOf(mValues.get(position).getIntervalInDays()) + " days left");
         holder.mPercentView.setProgress(mValues.get(position).getPercentComp());
 
+        //TODO Use lambda notation here. Check it out in Java docs or elsewhere if you don't remember.
+        //In your build.gradle for the module app you need to put these lines in android{} below buildTypes{} to enable Java 8 features.
+        //Make sure that you have Java 8 in your environment.
+//        compileOptions {
+//            targetCompatibility 1.8
+//            sourceCompatibility 1.8
+//        }
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +59,7 @@ public class MyClockRecyclerViewAdapter extends RecyclerView.Adapter<MyClockRecy
 
     @Override
     public int getItemCount() {
+        //TODO What if mValues is null? Think about such edge cases.
         return mValues.size();
     }
 

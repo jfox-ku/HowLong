@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 
 public class ClockItem {
 
+    //TODO Fix the logic by yourself.
     private String name;
     private int id;
     private static int counter = 0;

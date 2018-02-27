@@ -3,6 +3,7 @@ package com.example.atahanylmz.howlong;
 import java.util.ArrayList;
 
 class DefaultClocks {
+
     private static final DefaultClocks ourInstance = new DefaultClocks();
     public static ArrayList<ClockItem> clockList;
 
@@ -10,6 +11,7 @@ class DefaultClocks {
         return ourInstance;
     }
 
+    //TODO Put the data in a firebase project and fetch it from the Realtime Database
     private DefaultClocks() {
         clockList = new ArrayList<ClockItem>();
         clockList.add(new ClockItem("First Date", 26, 2, 2019));

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!-- TODO Set top and bottom margins as well, use dimens.xml for dimensions --><!-- TODO Consider the edge case where the RecyclerView did not populate with any data. Use an empty view for that. -->
 <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,4 +10,4 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context="com.example.atahanylmz.howlong.ClockFragment"
-    tools:listitem="@layout/fragment_clock" />
+    tools:listitem="@layout/clock_item" />

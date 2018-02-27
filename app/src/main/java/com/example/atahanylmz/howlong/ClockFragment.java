@@ -12,21 +12,23 @@ import android.view.ViewGroup;
 
 public class ClockFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
-    private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
+    //TODO First fetch data using AsyncTask. Learn how they work. Commit your work in a different branch.
+    //TODO Then fetch the data using AsyncTaskLoader and learn how loaders work. Commit your work in master branch.
+    //TODO Display your empty view when there is no data to populate the RecyclerView.
+
+    private static final String COLUMN_COUNT = "column-count";
+
     private int mColumnCount = 1;
-    private OnListFragmentInteractionListener mListener;
+    private OnClockListFragmentInteractionListener mListener;
 
     public ClockFragment() {
     }
 
-    // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
     public static ClockFragment newInstance(int columnCount) {
         ClockFragment fragment = new ClockFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
+        args.putInt(COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
         return fragment;
     }
@@ -36,7 +38,7 @@ public class ClockFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+            mColumnCount = getArguments().getInt(COLUMN_COUNT);
         }
     }
 
@@ -63,12 +65,10 @@ public class ClockFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnListFragmentInteractionListener) {
-            mListener = (OnListFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
-        }
+        if (context instanceof OnClockListFragmentInteractionListener)
+            mListener = (OnClockListFragmentInteractionListener) context;
+        else
+            throw new RuntimeException(context.toString() + " must implement OnClockListFragmentInteractionListener");
     }
 
     @Override
@@ -77,8 +77,8 @@ public class ClockFragment extends Fragment {
         mListener = null;
     }
 
-    public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
+    public interface OnClockListFragmentInteractionListener {
+
         void onListFragmentInteraction(ClockItem item);
     }
 }
